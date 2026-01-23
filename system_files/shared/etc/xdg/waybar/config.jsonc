@@ -10,7 +10,10 @@
         "niri/workspaces",
         "cpu",
         "memory",
-        "temperature"
+        "temperature",
+        "network",
+        "battery",
+        "battery#bat2"
     ],
     "modules-center": [
         "niri/window"
@@ -18,13 +21,10 @@
     "modules-right": [
         "idle_inhibitor",
         "pulseaudio",
-        "network",
         "power-profiles-daemon",
         "backlight",
         "keyboard-state",
         "niri/language",
-        "battery",
-        "battery#bat2",
         "clock",
         "tray"
     ],
@@ -109,7 +109,8 @@
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%H:%M:%S}",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%Y-%m-%d}",
+        "interval": 1
     },
     "cpu": {
         "format": "{usage}% CPU",
