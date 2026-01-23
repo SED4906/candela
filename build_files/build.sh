@@ -63,7 +63,6 @@ echo "application/vnd.flatpak.ref=io.github.kolunmi.Bazaar.desktop" >> /usr/shar
 
 systemctl enable podman.socket
 systemctl enable flatpak-nuke-fedora.service
-systemctl enable flatpak-preinstall.service
 
 flatpak remote-add --system --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 systemctl disable flatpak-add-fedora-repos.service
