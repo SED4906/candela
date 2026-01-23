@@ -67,4 +67,6 @@ systemctl enable flatpak-nuke-fedora.service
 flatpak remote-add --system --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 systemctl disable flatpak-add-fedora-repos.service
 
-mkdir /nix
+systemctl enable brew-setup.service
+
+# mkdir /nix # does this break anaconda?
