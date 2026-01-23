@@ -2,7 +2,23 @@
 
 set -ouex pipefail
 
+# Copy Files to Container
+rsync -rvKl /ctx/system_files/shared/ /
+
 ### Install packages
+
+# use negativo17 for 3rd party packages with higher priority than default
+if ! grep -q fedora-multimedia <(dnf5 repolist); then
+    # Enable or Install Repofile
+    dnf5 config-manager setopt fedora-multimedia.enabled=1 ||
+        dnf5 config-manager addrepo --from-repofile="https://negativo17.org/repos/fedora-multimedia.repo"
+fi
+# Set higher priority
+dnf5 config-manager setopt fedora-multimedia.priority=90
+
+# Add Flathub to the image for eventual application
+mkdir -p /etc/flatpak/remotes.d/
+curl --retry 3 -Lo /etc/flatpak/remotes.d/flathub.flatpakrepo https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # Packages can be installed from any enabled yum repo on the image.
 # RPMfusion repos are available by default in ublue main images
@@ -10,7 +26,7 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y sddm niri alacritty fuzzel waybar mako xwayland-satellite swaybg swayidle swaylock network-manager-applet
+dnf5 install -y sddm niri alacritty nwg-launchers waybar mako xwayland-satellite swaybg swayidle swaylock network-manager-applet nautilus gvfs gvfs-fuse pipewire-pulse
 
 # Use a COPR Example:
 #
@@ -19,13 +35,37 @@ dnf5 install -y sddm niri alacritty fuzzel waybar mako xwayland-satellite swaybg
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
 
-cat > /usr/lib/sddm/sddm.conf.d/00-hide-nix-build-users.conf << EOF
-[Users]
-MaximumUid=1999
+# TODO: remove me on next flatpak release when preinstall landed in Fedora
+dnf5 -y copr enable ublue-os/flatpak-test
+dnf5 -y --repo=copr:copr.fedorainfracloud.org:ublue-os:flatpak-test swap flatpak flatpak
+dnf5 -y --repo=copr:copr.fedorainfracloud.org:ublue-os:flatpak-test swap flatpak-libs flatpak-libs
+dnf5 -y --repo=copr:copr.fedorainfracloud.org:ublue-os:flatpak-test swap flatpak-session-helper flatpak-session-helper
+dnf5 -y --repo=copr:copr.fedorainfracloud.org:ublue-os:flatpak-test install flatpak-debuginfo flatpak-libs-debuginfo flatpak-session-helper-debuginfo
+dnf5 -y copr disable ublue-os/flatpak-test
+
+# VSCode package from Microsoft repo
+echo "Installing VSCode from official repo..."
+tee /etc/yum.repos.d/vscode.repo <<'EOF'
+[code]
+name=Visual Studio Code
+baseurl=https://packages.microsoft.com/yumrepos/vscode
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
+sed -i "s/enabled=.*/enabled=0/g" /etc/yum.repos.d/vscode.repo
+dnf -y install --enablerepo=code \
+    code
+
+echo "application/vnd.flatpak.ref=io.github.kolunmi.Bazaar.desktop" >> /usr/share/applications/mimeapps.list
 
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
+systemctl enable flatpak-nuke-fedora.service
+systemctl enable flatpak-preinstall.service
+
+flatpak remote-add --system --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+systemctl disable flatpak-add-fedora-repos.service
 
 mkdir /nix
