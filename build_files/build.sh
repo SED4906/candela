@@ -62,11 +62,10 @@ echo "application/vnd.flatpak.ref=io.github.kolunmi.Bazaar.desktop" >> /usr/shar
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
-systemctl enable flatpak-nuke-fedora.service
 
-flatpak remote-add --system --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+systemctl enable flatpak-nuke-fedora.service
 systemctl disable flatpak-add-fedora-repos.service
 
 systemctl enable brew-setup.service
 
-# mkdir /nix # does this break anaconda?
+mkdir /nix
