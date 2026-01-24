@@ -6,6 +6,11 @@
 input {
     keyboard {
         xkb {
+            /// SED's preferred settings:
+            /// Replace Caps Lock with Compose
+            /// Replace Right Alt with AltGr
+            /// Enable the special characters with AltGr
+            /// Make AltGr+4 type ₹ (It does nothing by default)
             // options "compose:caps,lv3:ralt_switch,misc:typo,rupeesign:4"
         }
         numlock
@@ -13,6 +18,14 @@ input {
     touchpad { natural-scroll; }
     mouse {}
     trackpoint {}
+}
+
+/// SED's preferred settings:
+/// The Surface Go 3's display is 1920x1280,
+/// which makes everything default to a larger scale.
+/// I don't want that.
+/-output "eDP-1" {
+    scale 1
 }
 
 layout {
