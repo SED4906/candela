@@ -1,0 +1,3 @@
+timeout 180 swaylock
+before-sleep swaylock
+lock swaylock
