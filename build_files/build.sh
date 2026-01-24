@@ -70,4 +70,4 @@ systemctl enable brew-setup.service
 
 mkdir /nix
 
-rm -r /var/lib/dnf
+rm -r /usr/share/doc
