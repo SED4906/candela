@@ -49,6 +49,7 @@ spawn-at-startup "mako"
 spawn-at-startup "waybar"
 spawn-at-startup "swaybg" "-i" "/usr/share/backgrounds/default.jxl" "-m" "fill"
 spawn-at-startup "swayidle" "-C" "/etc/swayidle/config"
+spawn-at-startup "/usr/libexec/xfce-polkit"
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
@@ -59,6 +60,11 @@ window-rule {
 
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"^xfce-polkit$"# title="^Authentication required$"
     open-floating true
 }
 
