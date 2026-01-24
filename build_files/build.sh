@@ -35,14 +35,6 @@ dnf5 install -y sddm niri alacritty nwg-launchers waybar mako xwayland-satellite
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
 
-# TODO: remove me on next flatpak release when preinstall landed in Fedora
-dnf5 -y copr enable ublue-os/flatpak-test
-dnf5 -y --repo=copr:copr.fedorainfracloud.org:ublue-os:flatpak-test swap flatpak flatpak
-dnf5 -y --repo=copr:copr.fedorainfracloud.org:ublue-os:flatpak-test swap flatpak-libs flatpak-libs
-dnf5 -y --repo=copr:copr.fedorainfracloud.org:ublue-os:flatpak-test swap flatpak-session-helper flatpak-session-helper
-dnf5 -y --repo=copr:copr.fedorainfracloud.org:ublue-os:flatpak-test install flatpak-debuginfo flatpak-libs-debuginfo flatpak-session-helper-debuginfo
-dnf5 -y copr disable ublue-os/flatpak-test
-
 # VSCode package from Microsoft repo
 echo "Installing VSCode from official repo..."
 tee /etc/yum.repos.d/vscode.repo <<'EOF'
