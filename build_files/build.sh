@@ -63,10 +63,10 @@ echo "application/vnd.flatpak.ref=io.github.kolunmi.Bazaar.desktop" >> /usr/shar
 
 systemctl enable podman.socket
 
+systemctl enable brew-setup.service
+systemctl enable flatpak-preinstall.service
 systemctl enable flatpak-nuke-fedora.service
 systemctl disable flatpak-add-fedora-repos.service
-
-systemctl enable brew-setup.service
 
 mkdir /nix
 
