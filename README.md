@@ -1,6 +1,9 @@
 # Candela
 
-A customized Universal Blue image with niri as the default compositor. This is intended for personal use, primarily on my Surface Go 3.
+A customized Universal Blue image with niri as the default compositor.
+The name and logo are derived from the niri logo (CC BY-SA 4.0), which is a candle flame. A candela is the metric unit of luminous intensity.
+
+This is intended for personal use, primarily on my Surface Go 3.
 
 Therefore, it's rather opinionated:
 - A dark theme is applied by default.

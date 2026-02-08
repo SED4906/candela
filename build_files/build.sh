@@ -26,7 +26,7 @@ curl --retry 3 -Lo /etc/flatpak/remotes.d/flathub.flatpakrepo https://dl.flathub
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y sddm niri alacritty nwg-launchers waybar mako xwayland-satellite swaybg swayidle swaylock network-manager-applet nautilus gvfs gvfs-fuse pavucontrol gnome-disk-utility xfce-polkit
+dnf5 install -y sddm niri alacritty nwg-launchers waybar mako xwayland-satellite swaybg swayidle swaylock network-manager-applet nautilus gvfs gvfs-fuse pavucontrol gnome-disk-utility xfce-polkit blueman
 
 # Use a COPR Example:
 #
@@ -69,10 +69,10 @@ systemctl enable flatpak-nuke-fedora.service
 systemctl disable flatpak-add-fedora-repos.service
 
 IMAGE_PRETTY_NAME="Candela"
-VERSION="${VERSION:-00.00000000}"
+VERSION="$(date -u +%Y%m%d)"
 CODE_NAME="International System of Units"
 
-sed -i "s|^PRETTY_NAME=.*|PRETTY_NAME=\"${IMAGE_PRETTY_NAME}\"|" /usr/lib/os-release
+sed -i "s|^PRETTY_NAME=.*|PRETTY_NAME=\"${IMAGE_PRETTY_NAME} (${VERSION})\"|" /usr/lib/os-release
 sed -i "s|^NAME=.*|NAME=\"$IMAGE_PRETTY_NAME\"|" /usr/lib/os-release
 sed -i "s|^VERSION_CODENAME=.*|VERSION_CODENAME=\"$CODE_NAME\"|" /usr/lib/os-release
 
