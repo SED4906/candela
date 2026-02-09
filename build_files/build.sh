@@ -35,6 +35,10 @@ dnf5 install -y sddm niri alacritty nwg-launchers waybar mako xwayland-satellite
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
 
+dnf5 -y copr enable sed4906/candela
+dnf5 -y install wscreensaver swaylock-plugin
+dnf5 -y copr disable sed4906/candela
+
 # TODO: remove me on next flatpak release when preinstall landed in Fedora
 dnf5 -y copr enable ublue-os/flatpak-test
 dnf5 -y --repo=copr:copr.fedorainfracloud.org:ublue-os:flatpak-test swap flatpak flatpak
