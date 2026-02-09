@@ -19,4 +19,4 @@ Therefore, it's rather opinionated:
 - swaylock-plugin is configured to show a random screensaver from wscreensaver.
     - swaylock is also present as a backup locker if swaylock-plugin crashes.
     - swaylock is configured to show a black screen with a lock icon in the center.
-        - The icon was created by nephros, used under the CC BY 2.0 license terms.
+        - The icon was created by nephros (CC BY 2.0), and is from the Gentoo icons.
