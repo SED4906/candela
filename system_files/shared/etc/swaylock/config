@@ -1,3 +1,4 @@
 color=000000
 scaling=center
 image=/usr/share/icons/gentoo/l33t/l33t_DES_nephros-lock.png
+command-each=/usr/bin/wscreensaver

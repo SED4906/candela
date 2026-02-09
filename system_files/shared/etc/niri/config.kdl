@@ -73,7 +73,8 @@ binds {
 
     Mod+T hotkey-overlay-title="Open a Terminal" { spawn "alacritty"; }
     Mod+D hotkey-overlay-title="Run an Application..." { spawn "nwggrid"; }
-    Super+Alt+L allow-when-locked=true hotkey-overlay-title="Lock the Screen" { spawn "swaylock"; }
+    Super+Alt+L allow-when-locked=true hotkey-overlay-title="Lock the Screen" { spawn "swaylock-plugin"; }
+    Super+Alt+Shift+L allow-when-locked=true hotkey-overlay-title="Recover Screen Locker" { spawn "swaylock"; }
 
     Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
 

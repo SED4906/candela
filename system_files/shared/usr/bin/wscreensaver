@@ -1,0 +1,4 @@
+#!/bin/bash
+SAVER=$(shuf -n 1 /etc/wscreensaver.whitelist)
+echo $SAVER >> $HOME/.local/share/wscreensaver.history
+exec xscreensaver-$SAVER
