@@ -12,17 +12,14 @@
         "memory",
         "temperature",
         "network",
-        "battery",
-        "battery#bat2"
+        "battery"
     ],
     "modules-center": [
         "niri/window"
     ],
     "modules-right": [
         "idle_inhibitor",
-        "mpd",
         "pulseaudio",
-        "power-profiles-daemon",
         "backlight",
         "keyboard-state",
         "niri/language",
@@ -39,32 +36,6 @@
             "unlocked": ""
         }
     },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}%",
-        "format-disconnected": "Disconnected MPD",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped",
-        "unknown-tag": "N/A",
-        "interval": 5,
-        "consume-icons": {
-            "on": "NOM "
-        },
-        "random-icons": {
-            "off": "INC ",
-            "on": "RNG "
-        },
-        "repeat-icons": {
-            "on": "INF "
-        },
-        "single-icons": {
-            "on": "1NF "
-        },
-        "state-icons": {
-            "paused": "||",
-            "playing": "|>"
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -75,15 +46,9 @@
         "tooltip-format-deactivated": "Will lock when idle",
     },
     "tray": {
-        // "icon-size": 21,
-        "spacing": 10,
-        // "icons": {
-        //   "blueman": "bluetooth",
-        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-        // }
+        "spacing": 2
     },
     "clock": {
-        // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%H:%M:%S}",
         "format-alt": "{:%Y-%m-%d}",
@@ -97,19 +62,15 @@
         "format": "{}% MEM"
     },
     "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
         "format-critical": "{temperatureC}°C HOT!",
         "format": "{temperatureC}°C"
     },
     "backlight": {
-        // "device": "acpi_video1",
         "format": "{percent}% BKLT"
     },
     "battery": {
         "states": {
-            // "good": 95,
             "warning": 30,
             "critical": 15
         },
@@ -120,22 +81,7 @@
         "format-plugged": "{capacity}% PLUG",
         "format-alt": "{time} LEFT"
     },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
-    "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "{profile}\n{driver} PWR",
-      "tooltip": true,
-      "format-icons": {
-        "default": "----",
-        "performance": "PERF",
-        "balanced": "BLNC",
-        "power-saver": "PWSV"
-      }
-    },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) WLAN",
         "format-ethernet": "{ipaddr}/{cidr} ETHN",
         "tooltip-format": "{ifname} via {gwaddr}",
@@ -144,7 +90,6 @@
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
         "format": "{volume}% SND {format_source}",
         "format-bluetooth": "{volume}% SND BT {format_source}",
         "format-bluetooth-muted": "MUTE BT {format_source}",

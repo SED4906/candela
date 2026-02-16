@@ -27,7 +27,7 @@ curl --retry 3 -Lo /etc/flatpak/remotes.d/flathub.flatpakrepo https://dl.flathub
 dnf5 -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 dnf5 -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 # this installs a package from fedora repos
-dnf5 install -y sddm niri alacritty nwg-launchers waybar mako xwayland-satellite swaybg swayidle swaylock network-manager-applet nautilus gvfs gvfs-fuse pavucontrol gnome-disk-utility xfce-polkit blueman mpd breeze-icon-theme qt6-qtimageformats qt6-qtsvg qt6-qtmultimedia qqc2-breeze-style
+dnf5 install -y sddm niri alacritty nwg-launchers waybar mako xwayland-satellite swaybg swayidle swaylock network-manager-applet nautilus gvfs gvfs-fuse pavucontrol gnome-disk-utility xfce-polkit blueman
 
 # Use a COPR Example:
 #
@@ -37,7 +37,7 @@ dnf5 install -y sddm niri alacritty nwg-launchers waybar mako xwayland-satellite
 # dnf5 -y copr disable ublue-os/staging
 
 dnf5 -y copr enable sed4906/candela
-dnf5 -y install wscreensaver swaylock-plugin quester
+dnf5 -y install wscreensaver swaylock-plugin
 dnf5 -y copr disable sed4906/candela
 
 # TODO: remove me on next flatpak release when preinstall landed in Fedora
