@@ -24,10 +24,8 @@ curl --retry 3 -Lo /etc/flatpak/remotes.d/flathub.flatpakrepo https://dl.flathub
 # RPMfusion repos are available by default in ublue main images
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
-dnf5 config-manager -y setopt rpmfusion-free.enabled=1
-dnf5 config-manager -y setopt rpmfusion-free-updates.enabled=1
-dnf5 config-manager -y setopt rpmfusion-nonfree.enabled=1
-dnf5 config-manager -y setopt rpmfusion-nonfree-updates.enabled=1
+dnf5 -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+dnf5 -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 # this installs a package from fedora repos
 dnf5 install -y sddm niri alacritty nwg-launchers waybar mako xwayland-satellite swaybg swayidle swaylock network-manager-applet nautilus gvfs gvfs-fuse pavucontrol gnome-disk-utility xfce-polkit blueman mpd
 
