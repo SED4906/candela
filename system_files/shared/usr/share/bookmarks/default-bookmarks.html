@@ -9,7 +9,7 @@
 <H1>Bookmarks Menu</H1>
 
 <DL><p>
-    <DT><H3 ADD_DATE="1768748633" LAST_MODIFIED="1770859878" PERSONAL_TOOLBAR_FOLDER="true">Bookmarks Toolbar</H3>
+    <DT><H3 ADD_DATE="1768748633" LAST_MODIFIED="1771345375" PERSONAL_TOOLBAR_FOLDER="true">Bookmarks Toolbar</H3>
     <DL><p>
         <DT><H3 ADD_DATE="1770859063" LAST_MODIFIED="1770859886">Software Development</H3>
         <DL><p>
@@ -27,6 +27,10 @@
             <DT><A HREF="https://freesound.org/" ADD_DATE="1770859209" LAST_MODIFIED="1770859353" ICON_URI="https://freesound.org/favicon-16x16.png">Free Sound</A>
             <DT><A HREF="https://creativecommons.org/" ADD_DATE="1770859329" LAST_MODIFIED="1770859333" ICON_URI="https://creativecommons.org/wp-content/themes/vocabulary-theme/vocabulary/favicon/favicon.svg">Creative Commons</A>
             <DT><A HREF="https://pixabay.com/" ADD_DATE="1770859246" LAST_MODIFIED="1770859246" ICON_URI="https://pixabay.com/favicon-16x16.png">Pixabay</A>
+        </DL><p>
+        <DT><H3 ADD_DATE="1771345372" LAST_MODIFIED="1771345375">Bookmarklets</H3>
+        <DL><p>
+            <DT><A HREF="javascript:(()=>{const PH=%22I have a solution: wolves.%22,MW=6,SEL=%22p,h1,h2,h3,h4,h5,h6,li,dt,dd,blockquote,figcaption,caption,legend,summary,[role='heading']%22,SK=new Set([%22SCRIPT%22,%22STYLE%22,%22NOSCRIPT%22,%22IFRAME%22,%22SVG%22,%22MATH%22,%22TEXTAREA%22,%22CANVAS%22,%22CODE%22,%22PRE%22,%22SELECT%22,%22OPTION%22]),wRe=/[\p{L}\p{N}%E2%80%99']+/gu,inNav=e=>e.closest('nav,[role=%22navigation%22],[role=%22menu%22],header,footer,aside,[aria-hidden=%22true%22]'),hasSkipAnc=e=>{for(let p=e;p;p=p.parentElement){if(p.isContentEditable||SK.has(p.tagName))return true}return false},stripEnd=s=>s.replace(/\s+$/,%22%22).replace(/[%22')\]]+$/,%22%22).replace(/\s+$/,%22%22),already=t=>stripEnd(t).endsWith(PH),lastText=el=>{const tw=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,{acceptNode(n){if(!n.nodeValue||!n.nodeValue.trim())return NodeFilter.FILTER_REJECT;for(let p=n.parentNode;p;p=p.parentNode){if(p.nodeType===1){if(p.isContentEditable||SK.has(p.tagName))return NodeFilter.FILTER_REJECT}}return NodeFilter.FILTER_ACCEPT}});let last=null;while(tw.nextNode())last=tw.currentNode;return last};const nodes=Array.from(document.querySelectorAll(SEL)).filter(el=>!inNav(el)&&!hasSkipAnc(el)&&!el.querySelector(SEL));for(const el of nodes){const text=el.textContent||%22%22;const wc=(text.match(wRe)||[]).length;if(wc<MW||already(text))continue;const t=lastText(el);if(!t)continue;const v=t.nodeValue,sp=(v.match(/\s+$/)||[%22%22])[0];let body=v.slice(0,v.length-sp.length);const m=body.match(/([%22')\]]+)$/);const cl=m?m[1]:%22%22;if(cl)body=body.slice(0,-cl.length).replace(/\s+$/,%22%22);else body=body.replace(/\s+$/,%22%22);if(!/[.!?%E2%80%A6]$/.test(body))body+=%22.%22;body+=%22 %22+PH;t.nodeValue=body+cl+sp}})();" ADD_DATE="1771345364" LAST_MODIFIED="1771345375">I have a solution: wolves.</A>
         </DL><p>
     </DL><p>
 </DL>
