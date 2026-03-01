@@ -91,6 +91,8 @@ systemctl enable flatpak-preinstall.service
 systemctl enable flatpak-nuke-fedora.service
 systemctl disable flatpak-add-fedora-repos.service
 
+systemctl --global enable mpd.socket
+
 IMAGE_PRETTY_NAME="Candela"
 VERSION="$(date -u +%Y%m%d)"
 CODE_NAME="International System of Units"
