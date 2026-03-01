@@ -27,7 +27,7 @@ curl --retry 3 -Lo /etc/flatpak/remotes.d/flathub.flatpakrepo https://dl.flathub
 dnf5 -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 dnf5 -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 # this installs a package from fedora repos
-dnf5 install -y sddm niri alacritty nwg-launchers waybar mako xwayland-satellite swaybg swayidle swaylock network-manager-applet nautilus gvfs gvfs-fuse pavucontrol gnome-disk-utility xfce-polkit blueman mpd
+dnf5 install -y sddm niri alacritty nwg-launchers waybar mako xwayland-satellite swaybg swayidle swaylock network-manager-applet nautilus gvfs gvfs-fuse pavucontrol gnome-disk-utility xfce-polkit blueman mpd mpc kvantum qqc2-breeze-style qt6ct
 
 # Use a COPR Example:
 #

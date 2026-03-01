@@ -20,3 +20,17 @@ Therefore, it's rather opinionated:
     - swaylock is also present as a backup locker if swaylock-plugin crashes.
     - swaylock is configured to show a black screen with a lock icon in the center.
         - The icon was created by nephros (CC BY 2.0), and is from the Gentoo icons.
+
+## Music Player Daemon
+
+To set up Music Player Daemon for use with Quester:
+
+1. `sudo install -o $USER -d /var/lib/mpd`
+2. `sudo install -o $USER -d /var/log/mpd`
+3. `mkdir /var/lib/mpd/{music,playlists}`
+4. `systemctl --user enable --now mpd.socket`
+5. Copy your (properly tagged) music library into `/var/lib/mpd/music/`
+6. `mpc rescan`
+7. Launch Quester
+8. Refresh Library
+9. Set the projectM preset directory to `/usr/share/projectM/presets`
