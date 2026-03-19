@@ -40,6 +40,10 @@ dnf5 -y copr enable sed4906/candela
 dnf5 -y install wscreensaver swaylock-plugin quester
 dnf5 -y copr disable sed4906/candela
 
+dnf5 -y copr enable tduck973564/filotimo-packages
+dnf5 install -y filotimo-atychia
+dnf5 -y copr disable tduck973564/filotimo-packages
+
 # TODO: remove me on next flatpak release when preinstall landed in Fedora
 dnf5 -y copr enable ublue-os/flatpak-test
 dnf5 -y --repo=copr:copr.fedorainfracloud.org:ublue-os:flatpak-test swap flatpak flatpak
@@ -91,6 +95,7 @@ systemctl enable flatpak-preinstall.service
 systemctl enable flatpak-nuke-fedora.service
 systemctl disable flatpak-add-fedora-repos.service
 
+systemctl --global enable atychiad.service
 systemctl --global enable mpd.socket
 
 IMAGE_PRETTY_NAME="Candela"
