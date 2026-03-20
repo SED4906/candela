@@ -27,7 +27,7 @@ curl --retry 3 -Lo /etc/flatpak/remotes.d/flathub.flatpakrepo https://dl.flathub
 dnf5 -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 dnf5 -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 # this installs a package from fedora repos
-dnf5 install -y sddm niri alacritty nwg-launchers waybar mako xwayland-satellite swaybg swayidle swaylock network-manager-applet nautilus gvfs gvfs-fuse pavucontrol gnome-disk-utility xfce-polkit blueman mpd mpc mpdris2 kvantum qqc2-breeze-style qt6ct kwin
+dnf5 install -y sddm niri alacritty nwg-launchers waybar mako xwayland-satellite swaybg swayidle swaylock network-manager-applet nautilus gvfs gvfs-fuse pavucontrol gnome-disk-utility xfce-polkit blueman mpd mpc mpdris2 kvantum qqc2-breeze-style qt6ct kwin xdg-user-dirs
 
 # Use a COPR Example:
 #
@@ -96,7 +96,6 @@ systemctl enable flatpak-nuke-fedora.service
 systemctl disable flatpak-add-fedora-repos.service
 
 systemctl --global enable atychiad.service
-systemctl --global enable mpd.socket
 
 IMAGE_PRETTY_NAME="Candela"
 VERSION="$(date -u +%Y%m%d)"
