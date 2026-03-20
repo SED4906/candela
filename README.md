@@ -1,7 +1,10 @@
 # Candela
 
 A customized Universal Blue image with niri as the default compositor.
-The name and logo are derived from the niri logo (CC BY-SA 4.0), which is a candle flame. A candela is the metric unit of luminous intensity.
+The name and logo are derived from the niri logo (CC BY-SA 4.0), which is a candle flame.
+The logo also uses the visual representation of a [solid angle](https://commons.wikimedia.org/wiki/File:Angle_solide_coordonnees.svg) (CC BY-SA 3.0) from Wikipedia.
+
+A candela is the metric unit of luminous intensity, equal to lumens per steradian.
 
 This is intended for personal use, primarily on my Surface Go 3.
 
