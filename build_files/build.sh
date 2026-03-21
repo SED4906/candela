@@ -44,6 +44,10 @@ dnf5 -y copr enable tduck973564/filotimo-packages
 dnf5 install -y filotimo-atychia
 dnf5 -y copr disable tduck973564/filotimo-packages
 
+dnf5 -y copr enable ublue-os/packages
+dnf5 install -y uupd
+dnf5 -y copr disable ublue-os/packages
+
 # TODO: remove me on next flatpak release when preinstall landed in Fedora
 dnf5 -y copr enable ublue-os/flatpak-test
 dnf5 -y --repo=copr:copr.fedorainfracloud.org:ublue-os:flatpak-test swap flatpak flatpak
@@ -93,6 +97,7 @@ systemctl enable podman.socket
 systemctl enable brew-setup.service
 systemctl enable flatpak-preinstall.service
 systemctl enable flatpak-nuke-fedora.service
+systemctl enable uupd.timer
 systemctl disable flatpak-add-fedora-repos.service
 
 systemctl --global enable atychiad.service
