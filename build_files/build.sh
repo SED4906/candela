@@ -118,5 +118,3 @@ export DRACUT_NO_XATTR=1
 chmod 0600 "/lib/modules/${KERNEL_VERSION}/initramfs.img"
 
 mkdir /nix
-
-rm -r /usr/share/doc
