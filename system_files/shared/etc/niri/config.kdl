@@ -1,3 +1,5 @@
+// Copy this to ~/.config/niri/config.kdl if you want to make modifications.
+
 // This config is in the KDL format: https://kdl.dev
 // "/-" comments out the following node.
 // Check the wiki for a full description of the configuration:
@@ -8,10 +10,11 @@ input {
         xkb {
             /// SED's preferred settings:
             /// Replace Caps Lock with Compose
+            /// Replace Right Control with Hyper (Mod3)
             /// Replace Right Alt with AltGr
             /// Enable the special characters with AltGr
             /// Make AltGr+4 type ₹ (It does nothing by default)
-            options "compose:caps,lv3:ralt_switch,misc:typo,rupeesign:4"
+            options "compose:caps,lv5:rctrl_switch,lv3:ralt_switch,misc:typo,rupeesign:4"
         }
         numlock
     }
@@ -70,6 +73,12 @@ window-rule {
 window-rule {
     match app-id=r#"^xfce-polkit$"# title="^Authentication required$"
     open-floating true
+}
+
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+    open-focused false
 }
 
 binds {
@@ -220,6 +229,12 @@ binds {
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
+
+    // Some keyboards don't have a real "Print Screen" key.
+    // Instead they have a key that inputs Super+Shift+S...
+    Super+Shift+S { screenshot; }
+    Ctrl+Super+Shift+S { screenshot-screen; }
+    Alt+Super+Shift+S { screenshot-window; }
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 

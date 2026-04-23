@@ -1,0 +1,4 @@
+#!/bin/bash
+SAVER=$(shuf -n 1 /etc/random_screensaver.whitelist)
+echo $SAVER >> $HOME/.local/share/random_screensaver.history
+exec windowtolayer saver_xwayland_wrapper.py /usr/libexec/xscreensaver/$SAVER -root

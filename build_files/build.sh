@@ -27,7 +27,7 @@ curl --retry 3 -Lo /etc/flatpak/remotes.d/flathub.flatpakrepo https://dl.flathub
 dnf5 -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 dnf5 -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 # this installs a package from fedora repos
-dnf5 install -y sddm niri alacritty nwg-launchers waybar mako xwayland-satellite swaybg swayidle swaylock network-manager-applet nautilus gvfs gvfs-fuse pavucontrol gnome-disk-utility xfce-polkit blueman mpd mpc mpdris2 kvantum qqc2-breeze-style qt6ct kwin xdg-user-dirs
+dnf5 install -y sddm niri alacritty nwg-launchers waybar mako xwayland-satellite swaybg swayidle swaylock network-manager-applet nautilus gvfs gvfs-fuse pavucontrol gnome-disk-utility xfce-polkit blueman mpd mpc mpdris2 kvantum qqc2-breeze-style qt6ct kwin xdg-user-dirs xscreensaver cage rsms-inter-vf-fonts google-crosextra-caladea-fonts
 
 # Use a COPR Example:
 #
@@ -37,7 +37,7 @@ dnf5 install -y sddm niri alacritty nwg-launchers waybar mako xwayland-satellite
 # dnf5 -y copr disable ublue-os/staging
 
 dnf5 -y copr enable sed4906/candela
-dnf5 -y install wscreensaver swaylock-plugin quester
+dnf5 -y install wscreensaver swaylock-plugin quester windowtolayer
 dnf5 -y copr disable sed4906/candela
 
 dnf5 -y copr enable tduck973564/filotimo-packages
@@ -47,6 +47,10 @@ dnf5 -y copr disable tduck973564/filotimo-packages
 dnf5 -y copr enable ublue-os/packages
 dnf5 install -y uupd
 dnf5 -y copr disable ublue-os/packages
+
+dnf5 -y copr enable peterwu/iosevka
+dnf5 install -y iosevka-fonts
+dnf5 -y copr disable peterwu/iosevka
 
 # TODO: remove me on next flatpak release when preinstall landed in Fedora
 dnf5 -y copr enable ublue-os/flatpak-test
