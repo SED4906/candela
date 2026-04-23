@@ -3,7 +3,7 @@
 // This config is in the KDL format: https://kdl.dev
 // "/-" comments out the following node.
 // Check the wiki for a full description of the configuration:
-// https://yalter.github.io/niri/Configuration:-Introduction
+// https://niri-wm.github.io/niri/Configuration:-Introduction
 
 input {
     keyboard {
@@ -61,11 +61,6 @@ spawn-at-startup "/usr/libexec/xfce-polkit"
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 window-rule {
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
-}
-
-window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
 }
@@ -84,7 +79,7 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+T hotkey-overlay-title="Open a Terminal" { spawn "alacritty"; }
+    Mod+T hotkey-overlay-title="Open a Terminal" { spawn "wezterm"; }
     Mod+D hotkey-overlay-title="Run an Application..." { spawn "nwggrid"; }
     Super+Alt+L allow-when-locked=true hotkey-overlay-title="Lock the Screen" { spawn "swaylock-plugin"; }
     Super+Alt+Shift+L allow-when-locked=true hotkey-overlay-title="Recover Screen Locker" { spawn "swaylock"; }
@@ -116,6 +111,11 @@ binds {
     Mod+J     { focus-window-down; }
     Mod+K     { focus-window-up; }
     Mod+L     { focus-column-right; }
+
+    Mod3+Left  { focus-column-left; }
+    Mod3+Down  { focus-workspace-down; }
+    Mod3+Up    { focus-workspace-up; }
+    Mod3+Right { focus-column-right; }
 
     Mod+Ctrl+Left  { move-column-left; }
     Mod+Ctrl+Down  { move-window-down; }
