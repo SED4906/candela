@@ -37,12 +37,8 @@ dnf5 install -y sddm niri nwg-launchers waybar mako xwayland-satellite swaybg sw
 # dnf5 -y copr disable ublue-os/staging
 
 dnf5 -y copr enable sed4906/candela
-dnf5 -y install wscreensaver swaylock-plugin quester windowtolayer
+dnf5 -y install wscreensaver swaylock-plugin quester windowtolayer atychia
 dnf5 -y copr disable sed4906/candela
-
-dnf5 -y copr enable tduck973564/filotimo-packages
-dnf5 install -y filotimo-atychia
-dnf5 -y copr disable tduck973564/filotimo-packages
 
 dnf5 -y copr enable ublue-os/packages
 dnf5 install -y uupd
