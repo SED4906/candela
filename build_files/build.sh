@@ -37,7 +37,7 @@ dnf5 install -y sddm niri nwg-launchers waybar mako xwayland-satellite swaybg sw
 # dnf5 -y copr disable ublue-os/staging
 
 dnf5 -y copr enable sed4906/candela
-dnf5 -y install wscreensaver swaylock-plugin quester windowtolayer atychia
+dnf5 -y install wscreensaver swaylock-plugin quester windowtolayer atychia gram
 dnf5 -y copr disable sed4906/candela
 
 dnf5 -y copr enable ublue-os/packages
@@ -51,28 +51,6 @@ dnf5 -y copr disable peterwu/iosevka
 dnf5 -y copr enable wezfurlong/wezterm-nightly
 dnf5 install -y wezterm
 dnf5 -y copr disable wezfurlong/wezterm-nightly
-
-# TODO: remove me on next flatpak release when preinstall landed in Fedora
-#dnf5 -y copr enable ublue-os/flatpak-test
-#dnf5 -y --repo=copr:copr.fedorainfracloud.org:ublue-os:flatpak-test swap flatpak flatpak
-#dnf5 -y --repo=copr:copr.fedorainfracloud.org:ublue-os:flatpak-test swap flatpak-libs flatpak-libs
-#dnf5 -y --repo=copr:copr.fedorainfracloud.org:ublue-os:flatpak-test swap flatpak-session-helper flatpak-session-helper
-#dnf5 -y --repo=copr:copr.fedorainfracloud.org:ublue-os:flatpak-test install flatpak-debuginfo flatpak-libs-debuginfo flatpak-session-helper-debuginfo
-#dnf5 -y copr disable ublue-os/flatpak-test
-
-# VSCode package from Microsoft repo
-echo "Installing VSCode from official repo..."
-tee /etc/yum.repos.d/vscode.repo <<'EOF'
-[code]
-name=Visual Studio Code
-baseurl=https://packages.microsoft.com/yumrepos/vscode
-enabled=1
-gpgcheck=1
-gpgkey=https://packages.microsoft.com/keys/microsoft.asc
-EOF
-sed -i "s/enabled=.*/enabled=0/g" /etc/yum.repos.d/vscode.repo
-dnf -y install --enablerepo=code \
-    code
 
 docker_pkgs=(
     containerd.io
