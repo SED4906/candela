@@ -6,12 +6,30 @@ The logo also uses the visual representation of a [solid angle](https://commons.
 
 A candela is the metric unit of luminous intensity, equal to lumens per steradian.
 
-This is intended for personal use, primarily on my Surface Go 3.
+This is intended for personal use, primarily on my Surface Go 3, and on my main computer as a daily driver.
 
 Therefore, it's rather opinionated:
 - A dark theme is applied by default.
-- I've opted to use nwggrid as the launcher instead of fuzzel.
-- Bazaar, Kate, Loupe, and Mission Center are the preinstalled flatpaks.
+- I've opted to use nwggrid as the launcher instead of fuzzel, and wezterm as the terminal instead of alacritty.
+- Included software:
+    - Firefox, a web browser.
+    - Gram, a code editor.
+    - Kvantum Manager, a theme selector.
+    - Qt6 Settings, a theme selector.
+    - Quester (not configured, run `ujust configure-mpd` first), a music player.
+- Preinstalled flatpaks, downloaded on first boot:
+    - Bazaar, a flatpak installer. Use this to install most software.
+    - Kate, a text editor.
+    - Loupe, an image viewer. Displayed as "Image Viewer" in the launcher.
+    - Mission Center, a task manager.
+- Self-explanatory included software:
+    - Bluetooth Manager
+    - Disks
+    - Files
+    - Network Manager Applet
+    - Volume Control
+- Homebrew is included for installing command-line tools.
+- Nix is not included, but works; see [Lix](https://lix.systems/).
 - Firefox is preconfigured:
     - to preinstall uBlock Origin.
     - to use DuckDuckGo as the default search engine.
@@ -23,5 +41,3 @@ Therefore, it's rather opinionated:
     - swaylock is also present as a backup locker if swaylock-plugin crashes.
     - swaylock is configured to show a black screen with a lock icon in the center.
         - The icon was created by nephros (CC BY 2.0), and is from the Gentoo icons.
-
-To set up Music Player Daemon for use with Quester, run `ujust configure-mpd`.
