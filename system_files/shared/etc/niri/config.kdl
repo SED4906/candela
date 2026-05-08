@@ -112,11 +112,6 @@ binds {
     Mod+K     { focus-window-up; }
     Mod+L     { focus-column-right; }
 
-    Mod3+Left  { focus-column-left; }
-    Mod3+Down  { focus-workspace-down; }
-    Mod3+Up    { focus-workspace-up; }
-    Mod3+Right { focus-column-right; }
-
     Mod+Ctrl+Left  { move-column-left; }
     Mod+Ctrl+Down  { move-window-down; }
     Mod+Ctrl+Up    { move-window-up; }
@@ -177,6 +172,11 @@ binds {
     Mod+Shift+WheelScrollUp        { focus-column-left; }
     Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
     Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
+
+    Mod3+Left  { focus-column-left; }
+    Mod3+Down  { focus-workspace-down; }
+    Mod3+Up    { focus-workspace-up; }
+    Mod3+Right { focus-column-right; }
 
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }

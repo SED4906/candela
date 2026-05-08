@@ -11,6 +11,7 @@ This is intended for personal use, primarily on my Surface Go 3, and on my main 
 Therefore, it's rather opinionated:
 - A dark theme is applied by default.
 - I've opted to use nwggrid as the launcher instead of fuzzel, and wezterm as the terminal instead of alacritty.
+    - Run `ujust configure-wezterm` to set the font to Iosevka.
 - Included software:
     - Firefox, a web browser.
     - Gram, a code editor.

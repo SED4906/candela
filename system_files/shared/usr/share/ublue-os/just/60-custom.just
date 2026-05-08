@@ -8,3 +8,7 @@ configure-mpd:
     echo "1. Launch Quester"
     echo "2. Refresh Library"
     echo "3. Set the projectM presets directory to /usr/share/projectM/presets"
+
+configure-wezterm:
+    #!/usr/bin/bash
+    install -D -t $HOME/.config/wezterm /etc/wezterm/wezterm.lua
