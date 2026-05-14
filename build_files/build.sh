@@ -38,7 +38,7 @@ dnf5 install -y sddm nwg-launchers waybar mako xwayland-satellite swaybg swayidl
 # dnf5 -y copr disable ublue-os/staging
 
 dnf5 -y copr enable sed4906/candela
-dnf5 -y install wscreensaver swaylock-plugin quester windowtolayer atychia gram
+dnf5 -y install wscreensaver swaylock-plugin quester windowtolayer atychia gram systemcontrol
 dnf5 -y copr disable sed4906/candela
 
 dnf5 -y copr enable ublue-os/packages
