@@ -28,6 +28,7 @@ Therefore, it's rather opinionated:
     - Disks
     - Files
     - Network Manager Applet
+    - [System Control](https://github.com/SED4906/systemcontrol/)
     - Volume Control
 - Homebrew is included for installing command-line tools.
 - Nix is not included, but works; see [Lix](https://lix.systems/).
