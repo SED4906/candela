@@ -2,7 +2,7 @@
 Branch=stable
 IsRuntime=false
 
-[Flatpak Preinstall org.kde.kate]
+[Flatpak Preinstall org.kde.kwrite]
 Branch=stable
 IsRuntime=false
 
