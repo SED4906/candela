@@ -20,7 +20,7 @@ Therefore, it's rather opinionated:
     - Quester (not configured, run `ujust configure-mpd` first), a music player.
 - Preinstalled flatpaks, downloaded on first boot:
     - Bazaar, a flatpak installer. Use this to install most software.
-    - Kate, a text editor.
+    - KWrite, a text editor.
     - Loupe, an image viewer. Displayed as "Image Viewer" in the launcher.
     - Mission Center, a task manager.
 - Self-explanatory included software:
