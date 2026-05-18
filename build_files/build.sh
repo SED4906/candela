@@ -28,7 +28,7 @@ dnf5 -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-relea
 dnf5 -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 # this installs a package from fedora repos
 dnf5 install -y --setopt=install_weak_deps=false niri
-dnf5 install -y sddm nwg-launchers waybar mako xwayland-satellite swaybg swayidle swaylock network-manager-applet nautilus gvfs gvfs-fuse pavucontrol gnome-disk-utility xfce-polkit blueman mpd mpc mpdris2 kvantum qqc2-breeze-style qt6ct kwin xdg-user-dirs xscreensaver cage rsms-inter-vf-fonts google-crosextra-caladea-fonts wireplumber gnome-keyring xdg-desktop-portal-gnome xdg-desktop-portal-gtk
+dnf5 install -y sddm nwg-launchers waybar mako xwayland-satellite swaybg swayidle swaylock network-manager-applet nautilus gvfs gvfs-fuse pavucontrol gnome-disk-utility xfce-polkit blueman mpd mpc mpdris2 kvantum qqc2-breeze-style qt6ct kwin xdg-user-dirs rsms-inter-vf-fonts google-crosextra-caladea-fonts wireplumber gnome-keyring xdg-desktop-portal-gnome xdg-desktop-portal-gtk
 
 # Use a COPR Example:
 #
@@ -38,7 +38,7 @@ dnf5 install -y sddm nwg-launchers waybar mako xwayland-satellite swaybg swayidl
 # dnf5 -y copr disable ublue-os/staging
 
 dnf5 -y copr enable sed4906/candela
-dnf5 -y install wscreensaver swaylock-plugin quester windowtolayer atychia gram systemcontrol
+dnf5 -y install wscreensaver swaylock-plugin quester atychia gram systemcontrol
 dnf5 -y copr disable sed4906/candela
 
 dnf5 -y copr enable ublue-os/packages

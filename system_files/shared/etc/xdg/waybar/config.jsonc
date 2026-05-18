@@ -109,7 +109,7 @@
     "image": {
       "on-click": "nwggrid",
       "on-click-right": "nwgbar",
-      "path": "/usr/share/plymouth/themes/spinner/watermark.png",
+      "exec": "/usr/bin/start_button.sh",
       "size": 72,
     },
     "tray": {
