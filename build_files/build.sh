@@ -2,9 +2,6 @@
 
 set -ouex pipefail
 
-# Copy Files to Container
-rsync -rvKl /ctx/system_files/shared/ /
-
 ### Install packages
 
 # use negativo17 for 3rd party packages with higher priority than default
@@ -65,6 +62,9 @@ systemctl enable uupd.timer
 systemctl disable flatpak-add-fedora-repos.service
 
 systemctl --global enable atychiad.service
+
+# Copy Files to Container
+rsync -rvKl /ctx/system_files/shared/ /
 
 IMAGE_PRETTY_NAME="Candela"
 VERSION="$(date -u +%Y%m%d)"
