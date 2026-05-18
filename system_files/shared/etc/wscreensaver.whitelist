@@ -4,7 +4,6 @@ antinspect
 antmaze
 antspotlight
 attraction
-atunnel
 barcode
 beats
 binaryhorizon
@@ -49,7 +48,6 @@ euler2d
 fadeplot
 fiberlamp
 fireworkx
-flag
 flame
 flipflop
 flow
@@ -62,10 +60,8 @@ geodesic
 gflux
 glblur
 glcells
-glforestfire
 glhanoi
 glknots
-glmatrix
 glschool
 glsnake
 goop
@@ -103,7 +99,6 @@ lockward
 loop
 marbling
 marching
-maze3d
 menger
 metaballs
 moebius
@@ -115,7 +110,6 @@ munch
 nakagin
 nerverot
 noof
-peepers
 penrose
 petri
 pipes
@@ -132,14 +126,12 @@ rocks
 romanboy
 rotor
 rubik
-sballs
 scooter
 shadebobs
 sierpinski
 sierpinski3d
 skytentacles
 sphere
-sphereeversion
 spiral
 splodesic
 sproingies
@@ -153,7 +145,6 @@ surfaces
 swirl
 t3d
 thornbird
-timetunnel
 topblock
 triangle
 tronbit
