@@ -14,9 +14,9 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE_DESC: "My Customized Universal Blue Image"
+  IMAGE_DESC: "A pragmatic Fedora-based system using the niri compositor."
   IMAGE_KEYWORDS: "bootc,ublue,universal-blue"
-  IMAGE_LOGO_URL: "https://avatars.githubusercontent.com/u/120078124?s=200&v=4"  # Put your own image here for a fancy profile on https://artifacthub.io/!
+  IMAGE_LOGO_URL: "https://github.com/SED4906/candela/blob/20251569d726b61eb165e25c77c52490a0d332d4/system_files/shared/usr/share/plymouth/themes/spinner/watermark.png"  # Put your own image here for a fancy profile on https://artifacthub.io/!
   IMAGE_NAME: "${{ github.event.repository.name }}"  # output image name, usually same as repo name
   IMAGE_REGISTRY: "ghcr.io/${{ github.repository_owner }}"  # do not edit
   DEFAULT_TAG: "latest"
