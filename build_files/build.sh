@@ -65,6 +65,8 @@ systemctl enable uupd.timer
 systemctl disable flatpak-add-fedora-repos.service
 
 systemctl --global enable atychiad.service
+systemctl --global enable mpd.service
+systemctl --global enable mpDris2.service
 
 # Copy Files to Container
 rsync -rvKl /ctx/system_files/overwrites/ /

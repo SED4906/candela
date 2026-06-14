@@ -11,13 +11,12 @@ This is intended for personal use, primarily on my Surface Go 3, and on my main 
 Therefore, it's rather opinionated:
 - A dark theme is applied by default.
 - I've opted to use nwggrid as the launcher instead of fuzzel, and wezterm as the terminal instead of alacritty.
-    - Run `ujust configure-wezterm` to set the font to Iosevka.
 - Included software:
     - Firefox, a web browser.
     - Gram, a code editor.
     - Kvantum Manager, a theme selector.
     - Qt6 Settings, a theme selector.
-    - Quester (not configured, run `ujust configure-mpd` first), a music player.
+    - Quester, a music player.
 - Preinstalled flatpaks, downloaded on first boot:
     - Bazaar, a flatpak installer. Use this to install most software.
     - KWrite, a text editor.
