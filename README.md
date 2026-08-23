@@ -6,7 +6,7 @@ The logo also uses the visual representation of a [solid angle](https://commons.
 
 A candela is the metric unit of luminous intensity, equal to lumens per steradian.
 
-This is intended for personal use, primarily on my Surface Go 3, and on my main computer as a daily driver.
+This is intended for personal use.
 
 Therefore, it's rather opinionated:
 - A dark theme is applied by default.
