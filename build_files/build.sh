@@ -3,7 +3,7 @@
 set -ouex pipefail
 
 # Copy Files to Container
-rsync -rvKl /ctx/system_files/shared/ /
+cp -avf "/ctx/system_files/shared"/. /
 
 ### Install packages
 
@@ -27,8 +27,8 @@ curl --retry 3 -Lo /etc/flatpak/remotes.d/flathub.flatpakrepo https://dl.flathub
 dnf5 -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 dnf5 -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 # this installs a package from fedora repos
-dnf5 install -y --setopt=install_weak_deps=false niri
-dnf5 install -y sddm nwg-launchers waybar mako xwayland-satellite swaybg swayidle swaylock network-manager-applet nautilus gvfs gvfs-fuse pavucontrol gnome-disk-utility xfce-polkit blueman mpd mpc mpdris2 kvantum qqc2-breeze-style qt6ct kwin xdg-user-dirs rsms-inter-vf-fonts google-crosextra-caladea-fonts wireplumber gnome-keyring xdg-desktop-portal-gnome xdg-desktop-portal-gtk
+dnf5 install -y --setopt=install_weak_deps=false niri qt6ct kvantum sddm kwin nautilus gnome-disk-utility waybar
+dnf5 install -y nwg-launchers mako xwayland-satellite swaybg swayidle swaylock network-manager-applet gvfs gvfs-fuse pavucontrol xfce-polkit blueman mpd mpc mpdris2 qqc2-breeze-style xdg-user-dirs rsms-inter-vf-fonts google-crosextra-caladea-fonts wireplumber gnome-keyring xdg-desktop-portal-gnome xdg-desktop-portal-gtk
 
 # Use a COPR Example:
 #
@@ -69,7 +69,7 @@ systemctl --global enable mpd.service
 systemctl --global enable mpDris2.service
 
 # Copy Files to Container
-rsync -rvKl /ctx/system_files/overwrites/ /
+cp -avf "/ctx/system_files/overwrites"/. /
 
 IMAGE_PRETTY_NAME="Candela"
 VERSION="$(date -u +%Y%m%d)"
