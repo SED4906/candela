@@ -11,13 +11,17 @@
       "FeatureRecommendations": false,
       "SkipOnboarding": true
     },
+    "DisableAccounts": true,
     "DisableFormHistory": true,
     "DisableFirefoxStudies": true,
+    "IPProtectionAvailable": false,
     "OfferToSaveLogins": false,
     "PasswordManagerEnabled": false,
     "AutofillAddressEnabled": false,
     "AutofillCreditCardEnabled": false,
-    "DisablePocket": true,
+    "SkipTermsOfUse": true,
+    "OverrideFirstRunPage": "",
+    "OverridePostUpdatePage": "",
     "FirefoxHome": {
       "Search": true,
       "TopSites": false,
@@ -29,8 +33,13 @@
     "Homepage": {
       "URL": "about:newtab"
     },
-    "GenerativeAI": {
-      "Enabled": false
+    "AIControls": {
+      "Default": {
+        "Value": "blocked"
+      },
+      "Translations": {
+        "Value": "available"
+      }
     },
     "SearchEngines": {
       "Default": "DuckDuckGo",

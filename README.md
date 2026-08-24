@@ -22,6 +22,7 @@ Therefore, it's rather opinionated:
     - KWrite, a text editor.
     - Loupe, an image viewer. Displayed as "Image Viewer" in the launcher.
     - Mission Center, a task manager.
+    - VLC, a media player.
 - Self-explanatory included software:
     - Bluetooth Manager
     - Disks
