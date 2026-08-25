@@ -53,10 +53,6 @@ layout {
     border { off; }
 }
 
-spawn-at-startup "mako"
-spawn-at-startup "waybar"
-spawn-at-startup "swaybg" "-i" "/usr/share/backgrounds/default.jxl" "-m" "fill"
-spawn-at-startup "swayidle" "-C" "/etc/swayidle/config"
 spawn-at-startup "/usr/libexec/xfce-polkit"
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"

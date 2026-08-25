@@ -69,6 +69,11 @@ systemctl --global enable atychiad.service
 systemctl --global enable mpd.service
 systemctl --global enable mpDris2.service
 
+systemctl --global add-wants niri.service mako.service
+systemctl --global add-wants niri.service waybar.service
+systemctl --global add-wants niri.service swaybg.service
+systemctl --global add-wants niri.service swayidle.service
+
 # Copy Files to Container
 cp -avf "/ctx/system_files/overwrites"/. /
 

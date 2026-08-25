@@ -10,6 +10,9 @@ This is intended for personal use.
 
 Therefore, it's rather opinionated:
 - A dark theme is applied by default.
+- Caps Lock as Compose, Right Alt as AltGr, and Right Control as Hyper.
+    - Hyper+Left/Right navigates between columns.
+    - Hyper+Up/Down navigates between workspaces.
 - I've opted to use nwggrid as the launcher instead of fuzzel, and wezterm as the terminal instead of alacritty.
 - Included software:
     - Firefox, a web browser.
