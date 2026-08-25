@@ -32,7 +32,7 @@ Therefore, it's rather opinionated:
     - Network Manager Applet
     - [System Control](https://github.com/SED4906/systemcontrol/)
     - VLC media player
-    - Volume Control
+    - PulseAudio Volume Control
 - Homebrew is included for installing command-line tools.
 - Nix is not included, but works; see [Lix](https://lix.systems/).
 - Firefox is preconfigured:

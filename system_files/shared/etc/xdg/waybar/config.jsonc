@@ -41,15 +41,6 @@
       "tooltip-format-activated": "Idle lock inhibited",
       "tooltip-format-deactivated": "Will lock when idle",
     },
-    "tray": {
-      "spacing": 2,
-    },
-    "clock": {
-      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-      "format": "{:%H:%M:%S}",
-      "format-alt": "{:%Y-%m-%d}",
-      "interval": 1,
-    },
     "cpu": {
       "format": "{usage}% CPU",
       "tooltip": false,
@@ -85,15 +76,6 @@
       "format-disconnected": "Disconnected INET",
       "format-alt": "{ifname}: {ipaddr}/{cidr}",
     },
-    "pulseaudio": {
-      "format": "{volume}% SND {format_source}",
-      "format-bluetooth": "{volume}% SND BT {format_source}",
-      "format-bluetooth-muted": "MUTE BT {format_source}",
-      "format-muted": "MUTE {format_source}",
-      "format-source": "{volume}% MIC",
-      "format-source-muted": "MUTE",
-      "on-click": "pavucontrol",
-    },
   },
   {
     "layer": "top", // Waybar at top layer
@@ -128,10 +110,11 @@
       "format-muted": "MUTE {format_source}",
       "format-source": "{volume}% MIC",
       "format-source-muted": "MUTE",
-      "on-click": "pavucontrol",
+      "on-click": "pavucontrol-qt",
     },
     "wlr/taskbar": {
       "on-click": "activate",
+      "on-click-middle": "close",
     },
   },
 ]
