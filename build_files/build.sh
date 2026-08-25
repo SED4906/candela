@@ -28,7 +28,8 @@ dnf5 -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-relea
 dnf5 -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 # this installs a package from fedora repos
 dnf5 install -y --setopt=install_weak_deps=false niri qt6ct kvantum sddm kwin nautilus gnome-disk-utility waybar
-dnf5 install -y nwg-launchers mako xwayland-satellite swaybg swayidle swaylock network-manager-applet gvfs gvfs-fuse pavucontrol xfce-polkit blueman mpd mpc mpdris2 qqc2-breeze-style xdg-user-dirs rsms-inter-vf-fonts google-crosextra-caladea-fonts wireplumber gnome-keyring xdg-desktop-portal-gnome xdg-desktop-portal-gtk
+dnf5 install -y nwg-launchers mako xwayland-satellite swaybg swayidle swaylock network-manager-applet gvfs gvfs-fuse pavucontrol xfce-polkit blueman mpd mpc mpdris2 qqc2-breeze-style xdg-user-dirs rsms-inter-vf-fonts google-crosextra-caladea-fonts wireplumber gnome-keyring xdg-desktop-portal-gnome xdg-desktop-portal-gtk vlc loupe
+dnf5 remove -y htop nvtop
 
 # Use a COPR Example:
 #

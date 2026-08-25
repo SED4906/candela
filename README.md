@@ -13,22 +13,22 @@ Therefore, it's rather opinionated:
 - I've opted to use nwggrid as the launcher instead of fuzzel, and wezterm as the terminal instead of alacritty.
 - Included software:
     - Firefox, a web browser.
-    - Gram, a code editor.
+    - Gram, a text editor.
     - Kvantum Manager, a theme selector.
     - Qt6 Settings, a theme selector.
     - Quester, a music player.
+    - WezTerm, a terminal emulator.
 - Preinstalled flatpaks, downloaded on first boot:
     - Bazaar, a flatpak installer. Use this to install most software.
-    - KWrite, a text editor.
-    - Loupe, an image viewer. Displayed as "Image Viewer" in the launcher.
     - Mission Center, a task manager.
-    - VLC, a media player.
 - Self-explanatory included software:
     - Bluetooth Manager
     - Disks
     - Files
+    - Image Viewer/"Loupe"
     - Network Manager Applet
     - [System Control](https://github.com/SED4906/systemcontrol/)
+    - VLC media player
     - Volume Control
 - Homebrew is included for installing command-line tools.
 - Nix is not included, but works; see [Lix](https://lix.systems/).
