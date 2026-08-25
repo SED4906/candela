@@ -1,2 +1,0 @@
-#!/bin/sh
-QT_QPA_PLATFORMTHEME=qt6ct pavucontrol-qt
