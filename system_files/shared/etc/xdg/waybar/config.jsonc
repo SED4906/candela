@@ -110,7 +110,7 @@
       "format-muted": "MUTE {format_source}",
       "format-source": "{volume}% MIC",
       "format-source-muted": "MUTE",
-      "on-click": "pavucontrol-qt",
+      "on-click": "/usr/bin/pavucontrol-qt.sh",
     },
     "wlr/taskbar": {
       "on-click": "activate",
