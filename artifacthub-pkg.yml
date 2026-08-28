@@ -1,0 +1,10 @@
+version: 44
+name: candela
+displayName: Candela
+createdAt: 2026-01-22
+containersImages:
+  - name: bootc
+    image: ghcr.io/sed4906/candela:latest
+    whitelisted: false
+    platforms:
+      - linux/amd64
