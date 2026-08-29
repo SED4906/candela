@@ -5,20 +5,31 @@ set -ouex pipefail
 # Copy Files to Container
 cp -avf "/ctx/system_files/shared"/. /
 
+# make root's home
+mkdir -p /var/roothome
+
+rpm-ostree install dnf5-plugins
+
+dnf5 -y copr enable ublue-os/packages
+dnf5 -y install ublue-os-just ublue-os-luks ublue-os-signing ublue-os-udev-rules ublue-os-update-services
+dnf5 -y copr disable ublue-os/packages
+
+# Remove Fedora Flatpak and related packages
+dnf5 remove -y fedora-flathub-remote
+
 ### Install packages
 
-# use negativo17 for 3rd party packages with higher priority than default
-if ! grep -q fedora-multimedia <(dnf5 repolist); then
-    # Enable or Install Repofile
-    dnf5 config-manager setopt fedora-multimedia.enabled=1 ||
-        dnf5 config-manager addrepo --from-repofile="https://negativo17.org/repos/fedora-multimedia.repo"
-fi
-# Set higher priority
-dnf5 config-manager setopt fedora-multimedia.priority=90
+# Replace podman provided policy.json with ublue-os one.
+mv /usr/etc/containers/policy.json /etc/containers/policy.json
 
 # Add Flathub to the image for eventual application
 mkdir -p /etc/flatpak/remotes.d/
 curl --retry 3 -Lo /etc/flatpak/remotes.d/flathub.flatpakrepo https://dl.flathub.org/repo/flathub.flatpakrepo
+
+# Fedora Flatpak service is a part of the flatpak package, ensure it's overridden by moving to replace it at the end of the build.
+mv -f /usr/lib/systemd/system/flatpak-add-flathub-repos.service /usr/lib/systemd/system/flatpak-add-fedora-repos.service
+
+dnf5 config-manager setopt fedora-cisco-openh264.enabled=0
 
 # Packages can be installed from any enabled yum repo on the image.
 # RPMfusion repos are available by default in ublue main images
@@ -27,9 +38,14 @@ curl --retry 3 -Lo /etc/flatpak/remotes.d/flathub.flatpakrepo https://dl.flathub
 dnf5 -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 dnf5 -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 # this installs a package from fedora repos
-dnf5 install -y --setopt=install_weak_deps=false niri qt6ct kvantum sddm kwin nautilus gnome-disk-utility waybar
-dnf5 install -y nwg-launchers mako xwayland-satellite swaybg swayidle swaylock network-manager-applet gvfs gvfs-fuse pavucontrol-qt xfce-polkit blueman mpd mpc mpdris2 qqc2-breeze-style xdg-user-dirs rsms-inter-vf-fonts google-crosextra-caladea-fonts wireplumber gnome-keyring xdg-desktop-portal-gnome xdg-desktop-portal-gtk vlc loupe
-dnf5 remove -y htop nvtop
+dnf5 install -y --setopt=install_weak_deps=false niri qt6ct kvantum sddm kwin nautilus gnome-disk-utility waybar firefox pipewire loupe lshw wpa_supplicant NetworkManager-wifi nwg-launchers mako xwayland-satellite swaybg swayidle swaylock network-manager-applet gvfs-fuse pavucontrol-qt xfce-polkit mpd mpc mpdris2 qqc2-breeze-style xdg-user-dirs xdg-utils rsms-inter-vf-fonts google-crosextra-caladea-fonts wireplumber pipewire-pulse gnome-keyring xdg-desktop-portal-gnome xdg-desktop-portal-gtk git
+dnf5 install -y blueman vlc
+
+/ctx/github-release-install.sh sigstore/cosign x86_64
+
+CSFG=/usr/lib/systemd/system-generators/coreos-sulogin-force-generator
+curl -sSLo ${CSFG} https://raw.githubusercontent.com/coreos/fedora-coreos-config/refs/heads/stable/overlay.d/05core/usr/lib/systemd/system-generators/coreos-sulogin-force-generator
+chmod +x ${CSFG}
 
 # Use a COPR Example:
 #
@@ -39,20 +55,22 @@ dnf5 remove -y htop nvtop
 # dnf5 -y copr disable ublue-os/staging
 
 dnf5 -y copr enable sed4906/candela
-dnf5 -y install wscreensaver swaylock-plugin quester atychia gram systemcontrol
+dnf5 -y install wscreensaver swaylock-plugin quester atychia gram systemcontrol wezterm uupd
 dnf5 -y copr disable sed4906/candela
 
-dnf5 -y copr enable ublue-os/packages
-dnf5 install -y uupd
-dnf5 -y copr disable ublue-os/packages
+#dnf5 -y copr enable ublue-os/packages
+#dnf5 install -y uupd
+#dnf5 -y copr disable ublue-os/packages
 
 dnf5 -y copr enable peterwu/iosevka
 dnf5 install -y iosevka-fonts
 dnf5 -y copr disable peterwu/iosevka
 
-dnf5 -y copr enable wezfurlong/wezterm-nightly
-dnf5 install -y wezterm
-dnf5 -y copr disable wezfurlong/wezterm-nightly
+dnf5 -y install pcsc-lite
+
+#dnf5 -y copr enable wezfurlong/wezterm-nightly
+#dnf5 install -y wezterm
+#dnf5 -y copr disable wezfurlong/wezterm-nightly
 
 echo "application/vnd.flatpak.ref=io.github.kolunmi.Bazaar.desktop" >> /usr/share/applications/mimeapps.list
 
@@ -93,3 +111,5 @@ export DRACUT_NO_XATTR=1
 chmod 0600 "/lib/modules/${KERNEL_VERSION}/initramfs.img"
 
 mkdir /nix
+
+rm -rf /usr/etc
