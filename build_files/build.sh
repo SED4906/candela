@@ -55,7 +55,7 @@ chmod +x ${CSFG}
 # dnf5 -y copr disable ublue-os/staging
 
 dnf5 -y copr enable sed4906/candela
-dnf5 -y install wscreensaver swaylock-plugin quester atychia gram systemcontrol wezterm uupd
+dnf5 -y install wscreensaver swaylock-plugin quester atychia gram systemcontrol uupd
 dnf5 -y copr disable sed4906/candela
 
 #dnf5 -y copr enable ublue-os/packages
@@ -66,11 +66,9 @@ dnf5 -y copr enable peterwu/iosevka
 dnf5 install -y iosevka-fonts
 dnf5 -y copr disable peterwu/iosevka
 
-dnf5 -y install pcsc-lite
-
-#dnf5 -y copr enable wezfurlong/wezterm-nightly
-#dnf5 install -y wezterm
-#dnf5 -y copr disable wezfurlong/wezterm-nightly
+dnf5 -y copr enable wezfurlong/wezterm-nightly
+dnf5 install -y wezterm
+dnf5 -y copr disable wezfurlong/wezterm-nightly
 
 echo "application/vnd.flatpak.ref=io.github.kolunmi.Bazaar.desktop" >> /usr/share/applications/mimeapps.list
 
@@ -91,6 +89,8 @@ systemctl --global add-wants niri.service mako.service
 systemctl --global add-wants niri.service waybar.service
 systemctl --global add-wants niri.service swaybg.service
 systemctl --global add-wants niri.service swayidle.service
+
+dnf5 -y install pcsc-lite
 
 # Copy Files to Container
 cp -avf "/ctx/system_files/overwrites"/. /
