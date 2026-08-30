@@ -90,8 +90,6 @@ systemctl --global add-wants niri.service waybar.service
 systemctl --global add-wants niri.service swaybg.service
 systemctl --global add-wants niri.service swayidle.service
 
-systemctl set-default graphical.target
-
 dnf5 -y install pcsc-lite
 
 # Copy Files to Container
