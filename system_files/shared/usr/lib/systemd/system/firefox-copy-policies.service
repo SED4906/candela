@@ -1,0 +1,16 @@
+[Unit]
+Description=Copy Firefox Policies
+After=flatpak-preinstall.service
+Wants=flatpak-preinstall.service
+
+[Service]
+Type=oneshot
+ExecStart=install -D -t /var/lib/flatpak/extension/org.mozilla.firefox.systemconfig/x86_64/stable/policies /etc/policies/policies.json
+Restart=on-failure
+RestartSec=30
+
+StartLimitIntervalSec=600
+StartLimitBurst=3
+
+[Install]
+WantedBy=multi-user.target

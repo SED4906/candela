@@ -15,7 +15,6 @@ Therefore, it's rather opinionated:
     - Hyper+Up/Down navigates between workspaces.
 - I've opted to use nwggrid as the launcher instead of fuzzel, and wezterm as the terminal instead of alacritty.
 - Included software:
-    - Firefox, a web browser.
     - Gram, a text editor.
     - Kvantum Manager, a theme selector.
     - Qt6 Settings, a theme selector.
@@ -24,14 +23,15 @@ Therefore, it's rather opinionated:
 - Preinstalled flatpaks, downloaded on first boot:
     - Bazaar, a flatpak installer. Use this to install most software.
     - Mission Center, a task manager.
+    - Firefox, a web browser.
 - Self-explanatory included software:
     - Bluetooth Manager
     - Disks
     - Files
-    - Image Viewer/"Loupe"
+    - Image Viewer/"Loupe" (flatpak)
     - Network Manager Applet
     - [System Control](https://github.com/SED4906/systemcontrol/)
-    - VLC media player
+    - VLC media player (flatpak)
     - PulseAudio Volume Control
 - Homebrew is included for installing command-line tools.
 - Nix is not included, but works; see [Lix](https://lix.systems/).
