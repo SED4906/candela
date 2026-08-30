@@ -55,7 +55,7 @@ chmod +x ${CSFG}
 # dnf5 -y copr disable ublue-os/staging
 
 dnf5 -y copr enable sed4906/candela
-dnf5 -y install wscreensaver swaylock-plugin quester gram systemcontrol uupd
+dnf5 -y install wscreensaver swaylock-plugin quester systemcontrol uupd
 dnf5 -y copr disable sed4906/candela
 
 #dnf5 -y copr enable ublue-os/packages
