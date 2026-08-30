@@ -5,7 +5,7 @@ Wants=flatpak-preinstall.service
 
 [Service]
 Type=oneshot
-ExecStart=install -D -t /var/lib/flatpak/extension/org.mozilla.firefox.systemconfig/x86_64/stable/policies /etc/policies/policies.json
+ExecStart=install -D -t /var/lib/flatpak/extension/org.mozilla.firefox.systemconfig/x86_64/stable/policies /etc/firefox/policies/policies.json
 Restart=on-failure
 RestartSec=30
 

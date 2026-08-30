@@ -16,7 +16,6 @@ Therefore, it's rather opinionated:
 - I've opted to use nwggrid as the launcher instead of fuzzel, and wezterm as the terminal instead of alacritty.
 - Included software:
     - Gram, a text editor.
-    - Kvantum Manager, a theme selector.
     - Qt6 Settings, a theme selector.
     - Quester, a music player.
     - WezTerm, a terminal emulator.
