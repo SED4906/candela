@@ -41,8 +41,6 @@ dnf5 -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree
 dnf5 install -y --setopt=install_weak_deps=false niri qt6ct sddm nautilus gnome-disk-utility waybar network-manager-applet nwg-launchers pipewire lshw wpa_supplicant NetworkManager-wifi mako swaybg swayidle swaylock gvfs-fuse pavucontrol-qt xfce-polkit mpd mpc mpdris2 qqc2-breeze-style xdg-user-dirs xdg-utils google-crosextra-caladea-fonts wireplumber pipewire-pulse gnome-keyring xdg-desktop-portal-gnome xdg-desktop-portal-gtk git systemd-container adwaita-fonts-all
 dnf5 install -y blueman
 
-/ctx/github-release-install.sh sigstore/cosign x86_64
-
 CSFG=/usr/lib/systemd/system-generators/coreos-sulogin-force-generator
 curl -sSLo ${CSFG} https://raw.githubusercontent.com/coreos/fedora-coreos-config/refs/heads/stable/overlay.d/05core/usr/lib/systemd/system-generators/coreos-sulogin-force-generator
 chmod +x ${CSFG}
@@ -55,12 +53,12 @@ chmod +x ${CSFG}
 # dnf5 -y copr disable ublue-os/staging
 
 dnf5 -y copr enable sed4906/candela
-dnf5 -y install wscreensaver swaylock-plugin quester systemcontrol uupd
+dnf5 -y install quester systemcontrol
 dnf5 -y copr disable sed4906/candela
 
-#dnf5 -y copr enable ublue-os/packages
-#dnf5 install -y uupd
-#dnf5 -y copr disable ublue-os/packages
+dnf5 -y copr enable ublue-os/packages
+dnf5 install -y uupd
+dnf5 -y copr disable ublue-os/packages
 
 dnf5 -y copr enable wezfurlong/wezterm-nightly
 dnf5 install -y wezterm

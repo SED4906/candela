@@ -18,6 +18,7 @@ Therefore, it's rather opinionated:
     - Qt6 Settings, a theme selector.
     - Quester, a music player.
     - WezTerm, a terminal emulator.
+    - [System Control](https://github.com/SED4906/systemcontrol/), a service manager.
 - Preinstalled flatpaks, downloaded on first boot:
     - Bazaar, a flatpak installer. Use this to install most software.
     - Firefox, a web browser.
@@ -29,7 +30,6 @@ Therefore, it's rather opinionated:
     - Image Viewer/"Loupe" (flatpak)
     - KWrite (flatpak)
     - Network Manager Applet
-    - [System Control](https://github.com/SED4906/systemcontrol/)
     - VLC media player (flatpak)
     - PulseAudio Volume Control
 - Homebrew is included for installing command-line tools.
@@ -41,7 +41,5 @@ Therefore, it's rather opinionated:
     - to disable AI features.
     - to disable saving usernames and passwords.
     - to declutter the home page.
-- swaylock-plugin is configured to show a random screensaver from wscreensaver.
-    - swaylock is also present as a backup locker if swaylock-plugin crashes.
-    - swaylock is configured to show a black screen with a lock icon in the center.
-        - The icon was created by nephros (CC BY 2.0), and is from the Gentoo icons.
+- swaylock is configured to show a black screen with a lock icon in the center.
+    - The icon was created by nephros (CC BY 2.0), and is from the Gentoo icons.

@@ -1,7 +1,7 @@
 [
   {
     "name": "Lock screen",
-    "exec": "swaylock-plugin",
+    "exec": "swaylock",
     "icon": "system-lock-screen-symbolic"
   },
   {
