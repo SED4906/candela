@@ -16,6 +16,7 @@ Therefore, it's rather opinionated:
 - I've opted to use nwggrid as the launcher instead of fuzzel, and wezterm as the terminal instead of alacritty.
 - Included software:
     - Qt6 Settings, a theme selector.
+    - Quester, a music player.
     - WezTerm, a terminal emulator.
     - [System Control](https://github.com/SED4906/systemcontrol/), a service manager.
 - Preinstalled flatpaks, downloaded on first boot:
