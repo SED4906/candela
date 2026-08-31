@@ -38,7 +38,7 @@ dnf5 config-manager setopt fedora-cisco-openh264.enabled=0
 dnf5 -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 dnf5 -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 # this installs a package from fedora repos
-dnf5 install -y --setopt=install_weak_deps=false niri qt6ct sddm nautilus gnome-disk-utility waybar network-manager-applet nwg-launchers pipewire lshw wpa_supplicant NetworkManager-wifi mako swaybg swayidle swaylock gvfs-fuse pavucontrol-qt xfce-polkit mpd mpc mpdris2 qqc2-breeze-style xdg-user-dirs xdg-utils google-crosextra-caladea-fonts wireplumber pipewire-pulse gnome-keyring xdg-desktop-portal-gnome xdg-desktop-portal-gtk git systemd-container adwaita-fonts-all
+dnf5 install -y --setopt=install_weak_deps=false niri qt6ct sddm nautilus gnome-disk-utility waybar network-manager-applet nwg-launchers pipewire lshw wpa_supplicant NetworkManager-wifi mako swaybg swayidle swaylock gvfs-fuse pavucontrol-qt xfce-polkit qqc2-breeze-style xdg-user-dirs xdg-utils google-crosextra-caladea-fonts wireplumber pipewire-pulse gnome-keyring xdg-desktop-portal-gnome xdg-desktop-portal-gtk git systemd-container adwaita-fonts-all
 dnf5 install -y blueman
 
 CSFG=/usr/lib/systemd/system-generators/coreos-sulogin-force-generator
@@ -53,7 +53,7 @@ chmod +x ${CSFG}
 # dnf5 -y copr disable ublue-os/staging
 
 dnf5 -y copr enable sed4906/candela
-dnf5 -y install quester systemcontrol
+dnf5 -y install systemcontrol
 dnf5 -y copr disable sed4906/candela
 
 dnf5 -y copr enable ublue-os/packages
