@@ -38,7 +38,7 @@ dnf5 config-manager setopt fedora-cisco-openh264.enabled=0
 dnf5 -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 dnf5 -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 # this installs a package from fedora repos
-dnf5 install -y --setopt=install_weak_deps=false niri qt6ct sddm nautilus gnome-disk-utility waybar network-manager-applet nwg-launchers pipewire lshw wpa_supplicant NetworkManager-wifi mako swaybg swayidle swaylock gvfs-fuse pavucontrol-qt xfce-polkit mpd mpc mpdris2 qqc2-breeze-style xdg-user-dirs xdg-utils rsms-inter-vf-fonts google-crosextra-caladea-fonts wireplumber pipewire-pulse gnome-keyring xdg-desktop-portal-gnome xdg-desktop-portal-gtk git systemd-container
+dnf5 install -y --setopt=install_weak_deps=false niri qt6ct sddm nautilus gnome-disk-utility waybar network-manager-applet nwg-launchers pipewire lshw wpa_supplicant NetworkManager-wifi mako swaybg swayidle swaylock gvfs-fuse pavucontrol-qt xfce-polkit mpd mpc mpdris2 qqc2-breeze-style xdg-user-dirs xdg-utils google-crosextra-caladea-fonts wireplumber pipewire-pulse gnome-keyring xdg-desktop-portal-gnome xdg-desktop-portal-gtk git systemd-container adwaita-fonts-all
 dnf5 install -y blueman
 
 /ctx/github-release-install.sh sigstore/cosign x86_64
@@ -61,10 +61,6 @@ dnf5 -y copr disable sed4906/candela
 #dnf5 -y copr enable ublue-os/packages
 #dnf5 install -y uupd
 #dnf5 -y copr disable ublue-os/packages
-
-dnf5 -y copr enable peterwu/iosevka
-dnf5 install -y iosevka-fonts
-dnf5 -y copr disable peterwu/iosevka
 
 dnf5 -y copr enable wezfurlong/wezterm-nightly
 dnf5 install -y wezterm
