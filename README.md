@@ -32,7 +32,6 @@ Therefore, it's rather opinionated:
     - Network Manager Applet
     - VLC media player (flatpak)
     - PulseAudio Volume Control
-- Homebrew is included for installing command-line tools.
 - Nix is not included, but works; see [Lix](https://lix.systems/).
 - Firefox is preconfigured:
     - to preinstall uBlock Origin.

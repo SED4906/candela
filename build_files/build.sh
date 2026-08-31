@@ -69,7 +69,6 @@ echo "application/vnd.flatpak.ref=io.github.kolunmi.Bazaar.desktop" >> /usr/shar
 #### Example for enabling a System Unit File
 systemctl enable podman.socket
 
-systemctl enable brew-setup.service
 systemctl enable flatpak-preinstall.service
 systemctl enable firefox-copy-policies.service
 systemctl enable flatpak-nuke-fedora.service
