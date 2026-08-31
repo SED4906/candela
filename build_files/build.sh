@@ -75,6 +75,9 @@ systemctl enable flatpak-nuke-fedora.service
 systemctl enable uupd.timer
 systemctl disable flatpak-add-fedora-repos.service
 
+systemctl --global enable mpd.service
+systemctl --global enable mpDris2.service
+
 systemctl --global add-wants niri.service mako.service
 systemctl --global add-wants niri.service waybar.service
 systemctl --global add-wants niri.service swaybg.service
