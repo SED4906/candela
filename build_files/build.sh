@@ -31,13 +31,6 @@ mv -f /usr/lib/systemd/system/flatpak-add-flathub-repos.service /usr/lib/systemd
 
 dnf5 config-manager setopt fedora-cisco-openh264.enabled=0
 
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
-dnf5 -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-dnf5 -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-# this installs a package from fedora repos
 dnf5 install -y --setopt=install_weak_deps=false niri qt6ct sddm nautilus gnome-disk-utility waybar network-manager-applet nwg-launchers pipewire lshw wpa_supplicant NetworkManager-wifi mako swaybg swayidle swaylock gvfs-fuse pavucontrol-qt xfce-polkit mpd mpc mpdris2 qqc2-breeze-style xdg-user-dirs xdg-utils google-crosextra-caladea-fonts wireplumber pipewire-pulse gnome-keyring xdg-desktop-portal-gnome xdg-desktop-portal-gtk git systemd-container adwaita-fonts-all
 dnf5 install -y blueman
 
