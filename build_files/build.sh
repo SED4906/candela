@@ -32,7 +32,7 @@ mv -f /usr/lib/systemd/system/flatpak-add-flathub-repos.service /usr/lib/systemd
 dnf5 config-manager setopt fedora-cisco-openh264.enabled=0
 
 dnf5 install -y --setopt=install_weak_deps=false niri qt6ct sddm nautilus gnome-disk-utility waybar network-manager-applet nwg-launchers pipewire lshw wpa_supplicant NetworkManager-wifi mako swaybg swayidle swaylock gvfs-fuse pavucontrol-qt xfce-polkit mpd mpc mpdris2 qqc2-breeze-style xdg-user-dirs xdg-utils google-crosextra-caladea-fonts wireplumber pipewire-pulse gnome-keyring xdg-desktop-portal-gnome xdg-desktop-portal-gtk git systemd-container adwaita-fonts-all
-dnf5 install -y blueman
+dnf5 install -y blueman linux-firmware iwlwifi-mvm-firmware
 
 CSFG=/usr/lib/systemd/system-generators/coreos-sulogin-force-generator
 curl -sSLo ${CSFG} https://raw.githubusercontent.com/coreos/fedora-coreos-config/refs/heads/stable/overlay.d/05core/usr/lib/systemd/system-generators/coreos-sulogin-force-generator
