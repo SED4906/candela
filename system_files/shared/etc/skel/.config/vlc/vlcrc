@@ -1,2 +1,4 @@
 [qt]
 qt-dark-palette=1
+[core]
+metadata-network-access=1
